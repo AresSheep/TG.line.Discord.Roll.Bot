@@ -1,4 +1,3 @@
-"use strict";
 if (!process.env.HEROKU_RELEASE_VERSION)
 	require('dotenv').config()
 var Dice = [],
@@ -63,7 +62,7 @@ var version = "";
 
 
 var gameName = function () {
-	return 'Ares擲骰BOT說明';
+	return '骰子機器人HKTRPG說明';
 }
 
 var gameType = function () {
@@ -105,7 +104,7 @@ var rollDiceCommand = async function ({
 	switch (true) {
 		case !mainMsg[1]:
 			rply.text =
-				"【Ares擲骰BOT】\n\
+				"【HKTRPG擲骰ROLLBOT】\n\
 請問有什麼可以幫你?\n\
 請輸入你想查詢的項目名字.\n\
 -------\n\
@@ -115,7 +114,11 @@ bothelp Dice	- 查詢trpg 不同系統擲骰指令\n\
 bothelp Tool	- 查詢trpg 輔助工具\n\
 bothelp admin	- 查詢系統工具\n\
 bothelp funny	- 查詢趣味功能\n\
+bothelp link	- 查詢hktrpg 不同平台連結\n\
+bothelp req		- 對HKTRPG RollBot提出意見\n\
 --------\n\
+程式開發，求助及TRPG Discord群 https://discord.gg/vx4kcm7\n\
+解鎖功能及開發支援 https://www.patreon.com/HKTRPG"
 			return rply;
 		case /^ver/i.test(mainMsg[1]):
 			rply.text = version + '\n\
@@ -297,5 +300,15 @@ bothelp report - 意見提供
 18: Wiki查詢/圖片搜索 .wiki .image 
 20: (公測中)自定義回應功能 .ra(p)(次數) (add del show 自定關鍵字)
 23: (公測中)資料庫功能 .db(p) (add del show 自定關鍵字)
+------
+輸入 6 或 bothelp link
+DISCORD
+TG
+LINE
+WWW
+GITHUB
+------
+輸入 7 或 bothelp report
+可以立即回應東西
 ------
 **/
